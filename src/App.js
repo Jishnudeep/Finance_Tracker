@@ -1,40 +1,32 @@
 import React from "react";
-import { CssBaseline, AppBar, Typography, Grid } from "@material-ui/core";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Budget from "./components/Budget";
 import Expenditure from "./components/Expenditure";
 import Remainder from "./components/Remainder";
 import ExpenseList from "./components/ExpenseList";
-import ExpenseItem from "./components/ExpenseItem";
 
 const App = () => {
   return (
-    <>
-      <CssBaseline />
-      <AppBar position="static">
-        <Typography variant="h4" color="white" align="center">
-          Budget Tracker
-        </Typography>
-      </AppBar>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={4}>
+    <div className="container">
+      <h1 className="mt-3">My Budget Planner</h1>
+      <div className="row mt-3">
+        <div className="col-sm">
           <Budget />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Expenditure />
-        </Grid>
-        <Grid item xs={12} md={4}>
+        </div>
+        <div className="col-sm">
           <Remainder />
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid item xs={12}>
+        </div>
+        <div className="col-sm">
+          <Expenditure />
+        </div>
+      </div>
+      <h3 className="mt-3">Expenses</h3>
+      <div className="row mt-3">
+        <div className="col-sm">
           <ExpenseList />
-        </Grid>
-        <Grid item xs={12}>
-          <ExpenseItem />
-        </Grid>
-      </Grid>
-    </>
+        </div>
+      </div>
+    </div>
   );
 };
 
